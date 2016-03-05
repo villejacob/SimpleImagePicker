@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OneClickImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-N3-qb7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Pick" id="dCy-ll-8Cp">
+                                        <connections>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="Zb0-Fs-VZx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YL9-xF-bM2">
+                                <rect key="frame" x="60" y="260" width="240" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHe-SK-zuc">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                    </imageView>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="280" width="240" height="240"/>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pdZ-N3-qb7" firstAttribute="top" secondItem="zHe-SK-zuc" secondAttribute="bottom" constant="236" id="BGb-ec-gg1"/>
+                            <constraint firstItem="zHe-SK-zuc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="260" id="CcF-zU-W8m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zHe-SK-zuc" secondAttribute="trailing" constant="60" id="SRh-yu-yyi"/>
+                            <constraint firstItem="pdZ-N3-qb7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SyA-Bc-jrU"/>
+                            <constraint firstItem="zHe-SK-zuc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="ZSa-EV-m1r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pdZ-N3-qb7" secondAttribute="trailing" constant="-20" id="b0H-G5-355"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pdZ-N3-qb7" secondAttribute="bottom" id="pdZ-by-2JI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pdZ-N3-qb7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BGb-ec-gg1"/>
+                                <exclude reference="SyA-Bc-jrU"/>
+                                <exclude reference="b0H-G5-355"/>
+                                <exclude reference="CcF-zU-W8m"/>
+                                <exclude reference="SRh-yu-yyi"/>
+                                <exclude reference="ZSa-EV-m1r"/>
+                                <exclude reference="pdZ-by-2JI"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pdZ-N3-qb7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BGb-ec-gg1"/>
+                                <include reference="SyA-Bc-jrU"/>
+                                <include reference="b0H-G5-355"/>
+                                <include reference="CcF-zU-W8m"/>
+                                <include reference="SRh-yu-yyi"/>
+                                <include reference="ZSa-EV-m1r"/>
+                                <include reference="pdZ-by-2JI"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="zHe-SK-zuc" id="pSj-c4-JD7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
